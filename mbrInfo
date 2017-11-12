@@ -1,5 +1,6 @@
 #!/bin/bash
-# Purpose = scan hard disk MBR - GPT
+# Purpose = Read MBR - GPT from any device or DD image
+# Output: infromation about MBR - GPT structure and partitions
 # Created on 06/11/2017
 # Author = G.Nikolaidis
 # Contact = gnlinuz@yahoo.com
@@ -70,7 +71,6 @@ readPartitionType()
 #___________________________________________________________________________________________
 getPartitionSizeSector()
 {
-	#echo "part count is=$partitionCount"
 	getPartitionLine $partitionCount
 	for t in {16..13}
 	do
@@ -135,8 +135,6 @@ getHardDiskSignature()
         	sigLine=$sigLine$(echo $cleanSigLine | cut -d' ' -f$e)
 	done
 }
-
-
 
 
 
@@ -258,7 +256,6 @@ readUuidEntry()
 {
 	gptPartitionCounter=$((gptPartitionCounter+1))
 	getUuidDisk "$firstEntry"
-	#echo "GUID is:$xUUID"
 	if [ "$xUUID" == "00000000-0000-0000-0000-000000000000" ];then
 		printf "*"
 		c=$((c+1))
@@ -284,10 +281,8 @@ readUuidEntry()
 		fi
 
 		sLBA=$((firstEntry+32))
-		#echo "First entry plus 32 is: $sLBA"
 		getStartingLba "$sLBA"
 		eLBA=$((firstEntry+40))
-		#echo "end entry plus 40 is: $eLBA"
 		getEndingLba "$eLBA"
 		calculateGptSize
 	fi
@@ -336,7 +331,6 @@ getEBRLines()
 	echo -en "ID: ";echo -e '\E[32;40m'"$partitionTypeIs"; echo -en '\E[0m'
 	echo "--------------------------------------------------------------------------------------------------------"
 	pc=$((pc+1))
-
 
 	ebrEntryPos=$((aBytePos+462))
 	ebrLine=""
