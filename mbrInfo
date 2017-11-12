@@ -408,7 +408,12 @@ do
 	;;
 	00)
 		echo
-		printf "MBR partition $pc is empty..."
+		if [ "$pc" == "4" ];then
+			printf "MBR partition $pc is empty..."
+			echo
+		else
+			printf "MBR partition $pc is empty..."
+		fi
 	;;
 	*)
 		echo -en '\E[32;40m'"Partition:$pc $path_of$pc $cleanPartitionLine"; echo -en '\E[0m';echo -e '\E[31;40m'" is $boot"; echo -en '\E[0m'
