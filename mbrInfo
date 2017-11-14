@@ -317,7 +317,7 @@ getEBRLines()
 	ebrLinePos=$((aBytePos+446))
 
 	ebrLine=`hexdump -C $path_of -s$ebrLinePos -n16`
-	cleanEbrLine=${ebrLine:10:48}
+	cleanEbrLine=${ebrLine:10:49}
 	isPartitionBootable "$cleanEbrLine"
 	echo -en '\E[32;40m'"$path_of$pc logical vol:$vol  $cleanEbrLine"; echo -en '\E[0m';echo -e '\E[31;40m'" is $boot"; echo -en '\E[0m'
 
@@ -336,9 +336,11 @@ getEBRLines()
 	ebrLine=""
 	cleanEbrLine=""
 	ebrLine=`hexdump -C $path_of -s $ebrEntryPos -n 16`
-	cleanEbrLine=${ebrLine:10:48}
+	cleanEbrLine=${ebrLine:10:49}
 
-	if [ "$cleanEbrLine" == "00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00" ];then
+	noSpaceLine=`echo $cleanEbrLine | tr -d ' '`
+#	echo "na space line is:$noSpaceLine"
+	if [ "$noSpaceLine" == "00000000000000000000000000000000" ];then
                 echo -en '\E[31;40m'"End of extended partition ------------------------------------------------------------------------------"; echo -e '\E[0m'
 		noExtend="no"
 	else
