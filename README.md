@@ -1,4 +1,4 @@
-Read MBR - GPT info
+# Read hard disk MBR - GPT info
 
 To run this script you must chmod 755 mbrInfo.sh and just type ./mbrInfo.sh
 You must run it under root privileges. The two files (partitionTypesGUID,
