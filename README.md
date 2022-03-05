@@ -7,11 +7,11 @@ ie.
 Hard disk signature is: 0009C532
 --------------------------------------------------------------------------------------------------------
 Partition:1 /dev/sda1 80 20 21 00 83 fe ff ff  00 08 00 00 00 00 c0 04 is bootable 80
-Partition size in Hex value is = 0x04C00000 -- in Dec value is = 79691776 -- size: 38.000 GB 
+Partition size in Hex value is = 0x04C00000 -- in Dec value is = 79691776 -- size: 38.000 GB
 start sector: 2048 , end sector: 79693823 ID: 83  Linux
 --------------------------------------------------------------------------------------------------------
 Partition:2 /dev/sda2 00 fe ff ff 82 fe ff ff  00 08 c0 04 00 00 40 00 is not bootable 00
-Partition size in Hex value is = 0x00400000 -- in Dec value is = 4194304 -- size: 2.000 GB 
+Partition size in Hex value is = 0x00400000 -- in Dec value is = 4194304 -- size: 2.000 GB
 start sector: 79693824 , end sector: 83888127 ID: 82  Linux swap / So
 --------------------------------------------------------------------------------------------------------
 Information on starting ending sector, size, partition type disk signature etc.
@@ -25,6 +25,5 @@ Because this is still under development, bugs may be there. Please
 fill free to give a notice.
 USE THIS SCRIPT AT YOUR OWN RISK!!Although this script
 is NOT distructive in any way. It reads info,that just
-sit's already there. Authors are not responsible for any missuse 
+sit's already there. Authors are not responsible for any missuse
 or any damage that might happen. Enjoy !!
-
