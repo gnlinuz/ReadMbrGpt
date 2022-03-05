@@ -1,6 +1,5 @@
-# Read hard disk MBR - GPT info
-
-
+Read hard disk MBR - GPT info
+-----------------------------
 This is a very simple script that READS MBR - GPT information from a hard
 disk or DD file. The output gives you some information about the MBR - GPT
 structure. It works on most known partition types exept a few ones.
@@ -19,7 +18,7 @@ Information on starting ending sector, size, partition type disk signature etc.
 
 To run this script you must chmod 755 mbrInfo.sh and just type ./mbrInfo.sh
 You must run it under root privileges. The two files (partitionTypesGUID,
-partition_types) must also be lying on the same folder where mbrInfo.sh is.
+partition types) must also be lying on the same folder where mbrInfo.sh is.
 bc has to be installed, which in most cases it is already there.
 
 Because this is still under development, bugs may be there. Please
