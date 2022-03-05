@@ -20,6 +20,8 @@ To run this script you must chmod 755 mbrInfo.sh and just type ./mbrInfo.sh
 You must run it under root privileges. The two files (partitionTypesGUID,
 partition types) must also be lying on the same folder where mbrInfo.sh is.
 bc has to be installed, which in most cases it is already there.
+Just run ./mbrInfo.sh then you will have to enter a device of file to scan
+ie. /dev/sda and press enter
 
 Because this is still under development, bugs may be there. Please
 fill free to give a notice.
